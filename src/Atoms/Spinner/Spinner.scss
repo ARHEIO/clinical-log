@@ -1,0 +1,96 @@
+$GREY_DARK: #919194 !default;
+$GREY_DARKEST: #31313D !default;
+$BASE_MEASURE: 8px;
+
+@mixin loading-spinner-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+@mixin loading-spinner {
+  position: relative;
+  margin: (2 * $BASE_MEASURE) 0;
+  width: $BASE_MEASURE * 5;
+  height: $BASE_MEASURE * 5;
+  font-size: $BASE_MEASURE * 5;
+}
+
+@mixin loading-spinner-base {
+  position: absolute;
+  top: 0;
+  overflow: visible;
+  width: $BASE_MEASURE * 5;
+  height: $BASE_MEASURE * 5;
+  font-size: $BASE_MEASURE * 5;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: $BASE_MEASURE * 0.5;
+}
+
+@mixin loading-spinner-rear {
+  @include loading-spinner-base;
+
+  circle {
+    animation: 15s colorMorphing infinite linear;
+    stroke-opacity: 0.15;
+  }
+}
+
+@mixin loading-spinner-front {
+  @include loading-spinner-base;
+  animation: 2s rotate infinite linear;
+
+  circle {
+    animation: 2s expandingLine infinite ease-in-out, 4s colorMorphing infinite linear;
+    stroke-dasharray: ($BASE_MEASURE * 11.75) ($BASE_MEASURE * 2.375);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes expandingLine {
+  from,
+  10% { stroke-dashoffset: 0; }
+
+  50%,
+  to { stroke-dashoffset: $BASE_MEASURE * -14; }
+
+  from,
+  10%,
+  to { stroke-dasharray: ($BASE_MEASURE * 11.75) ($BASE_MEASURE * 2.375); }
+
+  50%,
+  60% { stroke-dasharray: ($BASE_MEASURE * 0.05) ($BASE_MEASURE * 14); }
+}
+
+@keyframes colorMorphing {
+  0%,
+  35%,
+  100% { stroke: $GREY_DARKEST; }
+
+  50%,
+  85% { stroke: $GREY_DARK; }
+}
+
+.loading-spinner {
+  @include loading-spinner;
+
+  &-container {
+    @include loading-spinner-container;
+    // position: absolute;
+    // top: 40%;
+  }
+  &-front { @include loading-spinner-front; }
+  &-rear { @include loading-spinner-rear; }
+}

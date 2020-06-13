@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Quicksand');
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #C6C5B9;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+
+  .app {
+    flex: 1 0 auto;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: 960px) {
+      width: 800px;
+    }
+  }
+}

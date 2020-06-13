@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+"<header class=\\"app-header\\">
+  <div class=\\"app-header_top-bar\\"></div>
+  <div class=\\"app-header_bottom-bar\\">
+    <h1>South Yarra Health and Wellbeing Clinic</h1>
+  </div>
+</header>"
+`;
