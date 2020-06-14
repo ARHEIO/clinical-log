@@ -9,7 +9,7 @@ export interface PublicPost extends Post {
   reacts: {
     like: number;
     haha: number;
-    angry: number;
+    wow: number;
     sad: number;
   };
 }
