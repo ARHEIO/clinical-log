@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrivateRoute should render component when auth is true 1`] = `"<div>An Authed Component</div>"`;
+
+exports[`PrivateRoute should render redirect when auth is false 1`] = `
+"<div>
+  <p>This is the redirect:/newsfeed</p>
+</div>"
+`;

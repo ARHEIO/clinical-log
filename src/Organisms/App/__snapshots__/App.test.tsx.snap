@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render 1`] = `
+"<div class=\\"app-container\\">
+  <header class=\\"app-header\\">
+    <div class=\\"app-header_top-bar\\"></div>
+    <div class=\\"app-header_bottom-bar\\">
+      <div class=\\"container\\">
+        <h1>South Yarra Health and Wellbeing Clinic</h1><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained log-in-button MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/auth\\"><span class=\\"MuiButton-label\\">LOGIN</span><span class=\\"MuiTouchRipple-root\\"></span></a>
+      </div>
+    </div>
+  </header>
+  <section class=\\"app\\">
+    <div class=\\"killer-container\\">
+      <h2>Newsfeed</h2>
+      <div class=\\"survivor loading-spinner-container\\">
+        <div class=\\"loading-spinner\\"><svg class=\\"loading-spinner-rear\\">
+            <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"18px\\"></circle>
+          </svg><svg class=\\"loading-spinner-front\\">
+            <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"18px\\"></circle>
+          </svg></div>
+      </div>
+    </div>
+  </section>
+  <footer class=\\"app-footer\\">
+    <p>Made as part of a coding challenge</p>
+  </footer>
+</div>"
+`;

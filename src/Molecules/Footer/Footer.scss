@@ -1,0 +1,16 @@
+.app-footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  margin-top: auto;
+  padding: 16px;
+  background-color: #87AEB5;
+
+  & > * {
+    @media (min-width: 960px) {
+      width: 800px;
+    }
+  }
+}
