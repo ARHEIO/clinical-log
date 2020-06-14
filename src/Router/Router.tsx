@@ -9,11 +9,12 @@ import {
 
 import ClinicView from '../Organisms/ClinicView/ClinicView';
 import NewsfeedView from '../Organisms/NewsfeedView/NewsfeedView';
+import PrivateRoute from './PrivateRoute';
 
 const Router = (): ReactElement => (
   <HashRouter basename="/">
     <Switch>
-      <Route path="/clinic" component={ClinicView} />
+      <PrivateRoute path="/clinic" component={ClinicView} />
       <Route path="/newsfeed" component={NewsfeedView} />
       <Route path="/*" exact>
         <Redirect to="/newsfeed" />

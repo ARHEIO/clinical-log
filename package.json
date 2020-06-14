@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "homepage": "https://arhe.io/clinical-log/",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "coverage": "npm test -- --coverage --watchAll=false",
+    "deploy": "npm run build ; gh-pages -d build",
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint src",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "npm run lint:js ; npm run lint:css",
+    "lint:fix": "npm run lint:js -- --fix ; npm run lint:css -- --fix",
+    "husky": "npm run coverage ; npm run lint:fix"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.14",
     "@testing-library/jest-dom": "^4.2.4",
@@ -16,17 +29,6 @@
     "react-scripts": "3.4.1",
     "semantic-ui-react": "^0.88.2",
     "typescript": "^3.7.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "npm test -- --coverage --watchAll=false",
-    "deploy": "npm run build ; gh-pages -d build",
-    "eject": "react-scripts eject",
-    "lint:css": "stylelint src",
-    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint": "npm run lint:js ; npm run lint:css"
   },
   "devDependencies": {
     "@types/jest": "^24.9.1",

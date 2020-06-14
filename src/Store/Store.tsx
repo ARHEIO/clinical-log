@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState, createContext } from 'react';
 import { ThemeProvider, createMuiTheme, Theme } from '@material-ui/core/styles';
 
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
@@ -17,10 +17,10 @@ const getPixelSize = (x: number): string => `${x * 8}px`;
 const theme: Theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FF2A2B',
+      main: '#546A7B',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#87AEB5',
     },
   },
   overrides: {
@@ -37,14 +37,19 @@ const theme: Theme = createMuiTheme({
   },
 });
 
+export const AuthContext = createContext<any>({ isAuthed: false });
+
 const Store = (props: {children: any}): ReactElement => {
   const { children } = props;
+  const [authContext, setAuthContext] = useState({ isAuthed: false });
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        {children}
-      </ThemeProvider>
+      <AuthContext.Provider value={[authContext, setAuthContext]}>
+        <ThemeProvider theme={theme}>
+          {children}
+        </ThemeProvider>
+      </AuthContext.Provider>
     </>
   );
 };

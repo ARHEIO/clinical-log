@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders learn react link 1`] = `
+exports[`Newsfeed view should render 1`] = `
 "<div class=\\"killer-container\\">
   <h2>Newsfeed</h2>
   <div class=\\"survivor loading-spinner-container\\">

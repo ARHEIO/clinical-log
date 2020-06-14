@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders learn react link 1`] = `
+exports[`App should render 1`] = `
 "<div class=\\"app-container\\">
   <header class=\\"app-header\\">
     <div class=\\"app-header_top-bar\\"></div>
     <div class=\\"app-header_bottom-bar\\">
-      <h1>South Yarra Health and Wellbeing Clinic</h1>
+      <div class=\\"container\\">
+        <h1>South Yarra Health and Wellbeing Clinic</h1><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained log-in-button MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/auth\\"><span class=\\"MuiButton-label\\">LOGIN</span><span class=\\"MuiTouchRipple-root\\"></span></a>
+      </div>
     </div>
   </header>
   <section class=\\"app\\">

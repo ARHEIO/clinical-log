@@ -1,7 +1,10 @@
 import React, { useEffect, useState, ReactElement } from 'react';
 import './ClinicView.scss';
 import Spinner from '../../Atoms/Spinner/Spinner';
+import Card from '../../Atoms/Card/Card';
+import Toolbar from '../../Molecules/Toolbar/Toolbar';
 
+// A reminder we don't need to check auth state here
 
 const ClinicView = (): ReactElement => {
   const [clinicLogs, setClinicLogs] = useState<any | null>(null);
@@ -14,9 +17,14 @@ const ClinicView = (): ReactElement => {
 
   return (
     <div className="killer-container">
+      <Card><Toolbar location="clinic" /></Card>
       <h2>Clinical View</h2>
       { clinicLogs
-        ? <div>This is the clinic view</div>
+        ? (
+          <div className="post-container">
+            <Card><p>This is in a card</p></Card>
+          </div>
+        )
         : <Spinner />}
     </div>
   );
