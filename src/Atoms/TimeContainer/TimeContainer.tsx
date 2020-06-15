@@ -20,14 +20,14 @@ const oneDay = oneHour * 24;
 // TODO: refactor this so it doesn't want to make me tear my eyes out
 const getRelativeDate = (date: string): string => {
   const timeDifference = Date.now() - new Date(date).getTime();
-  if (timeDifference < (oneMinute * 2)) {
-    return timeDifference < oneMinute ? 'Just Now' : '1 minute ago';
+  if (timeDifference < oneMinute) {
+    return 'Just Now';
   } if (timeDifference < oneHour) {
-    return `${Math.floor(timeDifference / oneMinute)} minutes ago`;
+    return (timeDifference < (oneMinute * 2)) ? '1 minute ago' : `${Math.floor(timeDifference / oneMinute)} minutes ago`;
   } if (timeDifference < oneDay) {
     return (timeDifference < oneHour * 2) ? '1 hour ago' : `${Math.floor(timeDifference / oneHour)} hours ago`;
   }
-  return `${Math.floor(timeDifference / oneDay)} days ago`;
+  return (timeDifference < oneDay * 2) ? '1 day ago' : `${Math.floor(timeDifference / oneDay)} days ago`;
 };
 
 const testables = {

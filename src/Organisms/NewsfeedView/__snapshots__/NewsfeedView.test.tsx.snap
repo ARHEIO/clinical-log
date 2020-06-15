@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Newsfeed view should render 1`] = `
-"<div class=\\"killer-container\\">
+"<div class=\\"newsfeed-container\\">
   <h2>Newsfeed</h2>
   <div class=\\"survivor loading-spinner-container\\">
     <div class=\\"loading-spinner\\"><svg class=\\"loading-spinner-rear\\">
