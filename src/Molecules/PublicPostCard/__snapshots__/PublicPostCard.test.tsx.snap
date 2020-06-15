@@ -5,7 +5,7 @@ exports[`renders learn react link 1`] = `
   <div class=\\"public-post-top\\">
     <div class=\\"public-post-top__name\\">
       <div class=\\"icon-container\\">
-        <p>CR </p>
+        <p>CR</p>
       </div>
       <p>Chris Redfield</p>
     </div>
