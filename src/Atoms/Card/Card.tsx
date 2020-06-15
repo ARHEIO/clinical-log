@@ -1,11 +1,11 @@
-import React, { ReactElement, PropsWithChildren } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import './Card.scss';
 
-const Card: React.FC = (props: PropsWithChildren<any>): ReactElement => {
-  const { children } = props;
+const Card = (props: { className?: string; children?: ReactNode }): ReactElement => {
+  const { children, className } = props;
 
   return (
-    <div className="card-container">
+    <div className={`card-container ${className}`}>
       {children}
     </div>
   );

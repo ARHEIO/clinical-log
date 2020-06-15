@@ -1,0 +1,33 @@
+.public-post-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__name {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    & > p {
+      margin-left: 16px;
+    }
+  }
+
+  &__date {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    *:first-child {
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.public-post {
+  &__content {
+    padding: 16px 0;
+  }
+}

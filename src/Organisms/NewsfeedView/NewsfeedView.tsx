@@ -1,9 +1,11 @@
+/* eslint-disable react/no-array-index-key */
 import React, {
   useEffect, useState, ReactElement, useContext,
 } from 'react';
 import './NewsfeedView.scss';
 import Spinner from '../../Atoms/Spinner/Spinner';
 import Card from '../../Atoms/Card/Card';
+import PublicPostCard from '../../Molecules/PublicPostCard/PublicPostCard';
 import Toolbar from '../../Molecules/Toolbar/Toolbar';
 import { AuthContext } from '../../Store/Store';
 import { getPublicPosts } from '../../Services/PostApi/api';
@@ -24,13 +26,18 @@ const NewsfeedView = (): ReactElement => {
   // TODO make global error panel
   return error ? (<Card>{error}</Card>)
     : (
-      <div className="killer-container">
-        { authState.isAuthed && <Card><Toolbar location="newsfeed" /></Card> }
+      <div className="newsfeed-container">
+        { authState.isAuthed && (
+          <>
+            <h2>Admin Toolbar</h2>
+            <Card><Toolbar location="newsfeed" /></Card>
+          </>
+        )}
         <h2>Newsfeed</h2>
         { publicPosts
           ? (
             <div className="post-container">
-              {publicPosts && publicPosts.map((post: PublicPost) => <Card><p>{post.content}</p></Card>)}
+              {publicPosts && publicPosts.map((post: PublicPost, index) => <PublicPostCard key={`post_${index}`} post={post} />)}
             </div>
           )
           : <Spinner />}

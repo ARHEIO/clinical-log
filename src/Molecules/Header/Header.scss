@@ -1,7 +1,6 @@
 @import '../../styleguide.scss';
 
 .app-header {
-
   &_top-bar {
     height: 25px;
     background-color: #546A7B;
@@ -21,19 +20,12 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      padding: 0 16px;
+      width: 100%;
 
       h1 {
-        display: inline-block;
-        font-family: Quicksand,sans-serif;
-        font-size: 1.5em;
-        font-stretch: condensed;
-        font-weight: 400;
-        letter-spacing: 0.1em;
-        line-height: 1.1;
-        // text-shadow: 1px 1px 10px hsla(0, 0%, 100%, 0.25), -1px -1px 10px hsla(0, 0%, 100%, 0.25);
+        // display: inline-block;
         text-transform: uppercase;
-        color: #393D3F;
-        // transition: text-shadow 0.8s cubic-bezier(0.5, 0.18, 0.115, 0.87);
       }
 
       a {
@@ -42,6 +34,7 @@
       }
 
       @media (min-width: 960px) {
+        padding: 0;
         width: 800px;
       }
     }
