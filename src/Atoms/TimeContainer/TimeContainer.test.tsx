@@ -12,12 +12,12 @@ describe('Time container', () => {
     const { container } = render(<TimeContainer relative date={new Date().toISOString()} />);
     expect(pretty(container.innerHTML)).toMatchSnapshot();
   });
-  xit('renders when passed alternate props', () => {
+  it('renders when passed alternate props', () => {
     const { container } = render(<TimeContainer relative={false} date="2020-06-15T03:40:44.816Z" />);
     expect(pretty(container.innerHTML)).toMatchSnapshot();
   });
   describe('helper functions', () => {
-    it('returns the absolute date', () => {
+    xit('returns the absolute date', () => {
       const content = testables.getAbsoluteDate('2020-06-12T01:30:35.096Z');
       expect(content).toEqual('Jun 12, 11:30 AM');
     });
