@@ -6,7 +6,7 @@ const IconContainer = ({ imgSrc, username }: {imgSrc?: string; username: Name}):
   <div className="icon-container">
     {imgSrc
       ? <img src={imgSrc} alt={`Icon for ${username.firstName} ${username.lastName}`} />
-      : <p>{`${username.firstName[0]}${username.lastName[0]} `}</p>}
+      : <p>{`${username.firstName[0]}${username.lastName[0]}`}</p>}
   </div>
 );
 
