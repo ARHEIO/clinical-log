@@ -3,6 +3,7 @@ import React, {
   useEffect, useState, ReactElement, useContext,
 } from 'react';
 import './NewsfeedView.scss';
+import { Button } from '@material-ui/core';
 import Spinner from '../../Atoms/Spinner/Spinner';
 import Card from '../../Atoms/Card/Card';
 import PublicPostCard from '../../Molecules/PublicPostCard/PublicPostCard';
@@ -16,15 +17,26 @@ const NewsfeedView = (): ReactElement => {
   const [error, setError] = useState<string | null>(null);
   const [authState] = useContext(AuthContext);
 
-  useEffect(() => {
+  const getPosts = (): void => {
     getPublicPosts()
       .then((posts: PublicPost[]) => setPublicPosts(posts))
       .catch(() => setError('Failed to load posts'));
+  };
+
+  useEffect(() => {
+    getPosts();
   }, []);
 
   // TODO find a better way to handle errors than nested statements
   // TODO make global error panel
-  return error ? (<Card>{error}</Card>)
+  return error
+    ? (
+      <Card>
+        {error}
+        {' '}
+        <Button variant="outlined" color="secondary" onClick={getPosts}>Try Again</Button>
+      </Card>
+    )
     : (
       <div className="newsfeed-container">
         { authState.isAuthed && (

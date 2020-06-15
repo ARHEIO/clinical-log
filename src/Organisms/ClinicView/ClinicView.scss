@@ -1,8 +1,9 @@
 .clinic-container {
   h2 {
-    margin: 24px;
+    margin: 16px;
 
     @media (min-width: 960px) {
+      margin: 24px;
       margin-left: 0;
     }
   }
