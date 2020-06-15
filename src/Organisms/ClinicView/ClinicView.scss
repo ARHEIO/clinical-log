@@ -1,24 +1,10 @@
-.killer-container {
-
-  .killer-toolbar {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 8px 32px;
-    margin-bottom: 32px;
-
-    & > *:first-child {
-      margin-bottom: 16px;
-
-      @media (min-width: 960px) {
-        margin-bottom: 0;
-      }
-    }
+.clinic-container {
+  h2 {
+    margin: 16px;
 
     @media (min-width: 960px) {
-      flex-direction: row;
-      margin: 0 0 32px;
+      margin: 24px;
+      margin-left: 0;
     }
   }
 }

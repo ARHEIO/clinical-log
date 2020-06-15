@@ -6,7 +6,8 @@ name: Build
 # events but only for the master branch
 on:
   push:
-    branches: [ develop ]
+    branches-ignore:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

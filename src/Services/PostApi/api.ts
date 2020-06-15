@@ -4,50 +4,84 @@ import { PublicPost, Post } from './models';
 
 const publicPosts: PublicPost[] = [
   {
-    name: 'Enzo Brooks',
-    time: '2020-06-12T01:30:35.096Z',
+    name: {
+      firstName: 'Enzo',
+      lastName: 'Brooks',
+    },
+    time: new Date().toString(),
     content: 'Up to one-third of patients experience markers of distress during palliative ventilator withdrawal, study finds',
     isVenting: false,
     reacts: { wow: 12, haha: 0, like: 5, sad: 0 },
   },
   {
-    name: 'Chris Redfield',
-    time: '2020-06-12T01:30:35.096Z',
+    name: {
+      firstName: 'Chris',
+      lastName: 'Redfield',
+    },
+    time: '2020-06-15T03:40:44.816Z',
     content: 'Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice',
     isVenting: false,
     reacts: { wow: 0, haha: 0, like: 12, sad: 0 },
   },
   {
-    name: 'Enzo Brooks',
+    name: {
+      firstName: 'Chris',
+      lastName: 'Redfield',
+    },
+    time: '2020-06-14T03:40:44.816Z',
+    content: 'Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice',
+    isVenting: false,
+    reacts: { wow: 0, haha: 0, like: 12, sad: 0 },
+  },
+  {
+    name: {
+      firstName: 'Enzo',
+      lastName: 'Brooks',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Today, @Jerry is officially cancer free!',
-    isVenting: false,
+    isVenting: true,
     reacts: { wow: 0, haha: 0, like: 12, sad: 0 },
   },
 ];
 const clinicalLogs: Post[] = [
   {
-    name: 'Chris Redfield',
+    name: {
+      firstName: 'Chris',
+      lastName: 'Redfield',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Patient in room 78 blood pressure is 128/70',
   },
   {
-    name: 'Samantha Yule',
+    name: {
+      firstName: 'Samantha',
+      lastName: 'Yule',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Patient in room 47 is showing decreased signs of self awareness',
   },
   {
-    name: 'Samantha Yule',
+    name: {
+      firstName: 'Samantha',
+      lastName: 'Yule',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Patient in room 78 blood pressure is 134/96',
   },
   {
-    name: 'Enzo Brooks',
+    name: {
+      firstName: 'Enzo',
+      lastName: 'Brooks',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Patient in room 78 blood pressure is 139/104',
   },
   {
-    name: 'Samantha Yule',
+    name: {
+      firstName: 'Samantha',
+      lastName: 'Yule',
+    },
     time: '2020-06-12T01:30:35.096Z',
     content: 'Patient in room 78 blood pressure is 119/79',
   },

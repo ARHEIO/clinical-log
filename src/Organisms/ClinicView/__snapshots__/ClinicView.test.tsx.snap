@@ -1,17 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Clinic view should render 1`] = `
-"<div class=\\"killer-container\\">
+"<div class=\\"clinic-container\\">
+  <h2>Authed Toolbar</h2>
   <div class=\\"card-container\\">
     <nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span></a></nav>
   </div>
-  <h2>Clinical View</h2>
-  <div class=\\"survivor loading-spinner-container\\">
-    <div class=\\"loading-spinner\\"><svg class=\\"loading-spinner-rear\\">
-        <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"18px\\"></circle>
-      </svg><svg class=\\"loading-spinner-front\\">
-        <circle cx=\\"50%\\" cy=\\"50%\\" r=\\"18px\\"></circle>
-      </svg></div>
+  <h2>Clincal Logs</h2>
+  <div class=\\"post-container\\">
+    <div class=\\"card-container public-post\\">
+      <div class=\\"public-post-top\\">
+        <div class=\\"public-post-top__name\\">
+          <div class=\\"icon-container\\">
+            <p>CR</p>
+          </div>
+          <p>Chris Redfield</p>
+        </div>
+        <div class=\\"public-post-top__date\\">
+          <p>3 days ago</p>
+        </div>
+      </div>
+      <p class=\\"public-post__content\\">Patient in room 78 blood pressure is 128/70</p>
+    </div>
   </div>
 </div>"
 `;
+
+exports[`Clinic view should show an error if the api call fails 1`] = `"<div class=\\"card-container\\">Failed to load posts <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary\\" tabindex=\\"0\\" type=\\"button\\"><span class=\\"MuiButton-label\\">Try Again</span><span class=\\"MuiTouchRipple-root\\"></span></button></div>"`;
