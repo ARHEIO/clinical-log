@@ -8,20 +8,7 @@ exports[`Clinic view should render 1`] = `
   </div>
   <h2>Clincal Logs</h2>
   <div class=\\"post-container\\">
-    <div class=\\"card-container public-post\\">
-      <div class=\\"public-post-top\\">
-        <div class=\\"public-post-top__name\\">
-          <div class=\\"icon-container\\">
-            <p>CR</p>
-          </div>
-          <p>Chris Redfield</p>
-        </div>
-        <div class=\\"public-post-top__date\\">
-          <p>3 days ago</p>
-        </div>
-      </div>
-      <p class=\\"public-post__content\\">Patient in room 78 blood pressure is 128/70</p>
-    </div>
+    <p>MedicalLogCard</p>
   </div>
 </div>"
 `;
