@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Time container renders when passed alternate props 1`] = `"<p>Jun 15, 1:40 PM</p>"`;
+
+exports[`Time container renders when passed props 1`] = `"<p>Just Now</p>"`;

@@ -21,6 +21,7 @@ const ClinicView = (): ReactElement => {
   return error ? (<Card>{error}</Card>)
     : (
       <div className="killer-container">
+        <h2>Admin Toolbar</h2>
         <Card><Toolbar location="clinic" /></Card>
         <h2>Clinical View</h2>
         { clinicLogs
