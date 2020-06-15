@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { render, RenderResult, wait } from '@testing-library/react';
 import pretty from 'pretty';
 import NewsfeedView from './NewsfeedView';
 import { AuthContext } from '../../Store/Store';
 import * as endpoints from '../../Services/PostApi/api';
 import { PublicPost } from '../../Services/PostApi/models';
+
+jest.mock('../../Molecules/PublicPostCard/PublicPostCard', () => (): ReactElement => (<p>PublicPostCard</p>));
 
 const renderComponent = (isAuthed = false): RenderResult => (
   render(
@@ -18,7 +20,7 @@ const exampleLog: PublicPost = {
     firstName: 'Chris',
     lastName: 'Redfield',
   },
-  time: '2020-06-15T03:40:44.816Z',
+  time: new Date().toISOString(),
   content: 'Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice',
   isVenting: false,
   reacts: {

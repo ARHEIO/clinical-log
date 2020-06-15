@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { render, wait } from '@testing-library/react';
 import pretty from 'pretty';
 import ClinicView from './ClinicView';
 import * as endpoints from '../../Services/PostApi/api';
 import { Post } from '../../Services/PostApi/models';
+
+jest.mock('../../Molecules/MedicalLogCard/MedicalLogCard', () => (): ReactElement => (<p>MedicalLogCard</p>));
 
 const exampleLog: Post = {
   name: {
