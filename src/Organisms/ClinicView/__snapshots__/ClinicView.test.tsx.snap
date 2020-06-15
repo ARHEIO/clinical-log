@@ -26,4 +26,4 @@ exports[`Clinic view should render 1`] = `
 </div>"
 `;
 
-exports[`Clinic view should show an error if the api call fails 1`] = `"<div class=\\"card-container\\">Failed to load posts</div>"`;
+exports[`Clinic view should show an error if the api call fails 1`] = `"<div class=\\"card-container\\">Failed to load posts <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary\\" tabindex=\\"0\\" type=\\"button\\"><span class=\\"MuiButton-label\\">Try Again</span><span class=\\"MuiTouchRipple-root\\"></span></button></div>"`;
