@@ -29,7 +29,7 @@ const NewsfeedView = (): ReactElement => {
       <div className="newsfeed-container">
         { authState.isAuthed && (
           <>
-            <h2>Admin Toolbar</h2>
+            <h2>Authed Toolbar</h2>
             <Card><Toolbar location="newsfeed" /></Card>
           </>
         )}
