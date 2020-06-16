@@ -33,7 +33,7 @@ describe('PostForm', () => {
       container.querySelector('.post-submission__submit').click();
 
       await wait(() => {
-        expect(mockParentFn).toHaveBeenCalledWith({ postContent });
+        expect(mockParentFn).toHaveBeenCalledWith({ postContent, ventCheckbox: false });
       });
     });
 
@@ -46,7 +46,7 @@ describe('PostForm', () => {
       container.querySelector('.post-submission__submit').click();
 
       await wait(() => {
-        expect(mockParentFn).toHaveBeenCalledWith({ postContent });
+        expect(mockParentFn).toHaveBeenCalledWith({ postContent, ventCheckbox: true });
       });
     });
 
@@ -68,9 +68,8 @@ describe('PostForm', () => {
 
       fireEvent.change(container.querySelector('#postContent'), { target: { value: postContent } });
       container.querySelector('.post-submission__submit').click();
-
       await wait(() => {
-        expect(mockParentFn).toHaveBeenCalledWith({ postContent });
+        expect(mockParentFn).toHaveBeenCalledWith({ postContent, ventCheckbox: false });
       });
     });
   });

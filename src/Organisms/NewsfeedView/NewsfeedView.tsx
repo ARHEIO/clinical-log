@@ -10,7 +10,7 @@ import PublicPostCard from '../../Molecules/PublicPostCard/PublicPostCard';
 import Toolbar from '../../Molecules/Toolbar/Toolbar';
 import PostForm from '../../Molecules/PostForm/PostForm';
 import { AuthContext } from '../../Store/Store';
-import { getPublicPosts } from '../../Services/PostApi/api';
+import { getPublicPosts, addNewPublicPost, addReact } from '../../Services/PostApi/api';
 import { PublicPost, Name, Reacts } from '../../Services/PostApi/models';
 
 const NewsfeedView = (): ReactElement => {
@@ -32,15 +32,25 @@ const NewsfeedView = (): ReactElement => {
       like: 0, haha: 0, wow: 0, sad: 0,
     };
     const newPost: PublicPost = {
+      id: publicPosts ? publicPosts[0].id + 1 : 1, // there should always be a value at this point
       content: postContent.postContent,
-      isVenting: postContent.isVenting,
+      isVenting: postContent.ventCheckbox,
       name: userDetails,
       time: new Date().toISOString(),
       reacts: emptyReacts,
     };
+    if (publicPosts) {
+      setPublicPosts([newPost, ...publicPosts]);
+    } else {
+      setPublicPosts([newPost]);
+    }
+    addNewPublicPost(newPost);
+  };
 
-    // eslint-disable-next-line no-unused-expressions
-    publicPosts && setPublicPosts([newPost, ...publicPosts]);
+  const postNewReact = async (reactEvent: { eventType: string; id: number }): Promise<void> => {
+    const response = await addReact(reactEvent.id, reactEvent.eventType);
+    setPublicPosts(null); // I honestly don't know why this works but the state doesn't update otherwise
+    setPublicPosts(response);
   };
 
   useEffect(() => {
@@ -73,7 +83,9 @@ const NewsfeedView = (): ReactElement => {
         { publicPosts
           ? (
             <div className="post-container">
-              {publicPosts && publicPosts.map((post: PublicPost, index) => <PublicPostCard key={`post_${index}`} post={post} />)}
+              {publicPosts && publicPosts.map(
+                (post: PublicPost, index) => <PublicPostCard key={`post_${index}`} post={post} clickHandler={postNewReact} />,
+              )}
             </div>
           )
           : <Spinner />}

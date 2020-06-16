@@ -8,10 +8,14 @@ import ReactComponent from '../../Atoms/ReactComponent/ReactComponent';
 
 // Todo, wrap @mentions in tags to make them show up as blue
 
-const PublicPostCard = (props: {post: PublicPost}): ReactElement => {
-  const { post } = props;
+const PublicPostCard = (props: {post: PublicPost; clickHandler: Function}): ReactElement => {
+  const { post, clickHandler } = props;
 
   const ventString = 'I\'m just venting';
+
+  const mapReactEvent = (eventType: string): void => {
+    clickHandler({ eventType, id: post.id });
+  };
 
   return (
     <Card className="public-post">
@@ -26,7 +30,7 @@ const PublicPostCard = (props: {post: PublicPost}): ReactElement => {
         </div>
       </div>
       <p className="public-post__content">{post.content}</p>
-      <ReactComponent reacts={post.reacts} />
+      <ReactComponent reacts={post.reacts} reactHandler={mapReactEvent} />
     </Card>
   );
 };

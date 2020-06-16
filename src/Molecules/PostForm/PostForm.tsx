@@ -23,11 +23,8 @@ const PostForm = (props: {onSubmitParent: Function; isPublic?: boolean}): ReactE
     <Card>
       <Formik
         validate={validate}
-        initialValues={{ postContent: '' }}
-        onSubmit={async (values): Promise<void> => {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          onSubmitParent(values);
-        }}
+        initialValues={{ postContent: '', ventCheckbox: false }}
+        onSubmit={async (values): Promise<void> => onSubmitParent(values)}
       >
         {(innerProps: any): ReactNode => {
           const {
@@ -59,9 +56,8 @@ const PostForm = (props: {onSubmitParent: Function; isPublic?: boolean}): ReactE
                 {isPublic && (
                   <FormControlLabel
                     className="post-submission__venting"
-                    control={
-                      <Checkbox value={values.isVent} />
-                    }
+                    id="ventCheckbox"
+                    control={<Checkbox value={values.isVent} onChange={handleChange} id="ventCheckbox" />}
                     label="I'm just venting"
                   />
                 )}

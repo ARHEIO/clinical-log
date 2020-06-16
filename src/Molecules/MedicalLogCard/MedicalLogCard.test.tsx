@@ -7,6 +7,7 @@ import { Post } from '../../Services/PostApi/models';
 jest.mock('../../Atoms/TimeContainer/TimeContainer', () => (): ReactElement => (<p>TimeContainer</p>));
 
 const defaultPost: Post = {
+  id: 1,
   name: {
     firstName: 'Chris',
     lastName: 'Redfield',

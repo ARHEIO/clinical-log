@@ -27,6 +27,7 @@ const ClinicView = (): ReactElement => {
       firstName: 'Chris', lastName: 'Redfield',
     };
     const newLog: Post = {
+      id: clinicLogs ? clinicLogs[0].id + 1 : 1, // there should always be a value at this point
       content: postContent.postContent,
       name: userDetails,
       time: new Date().toISOString(),
