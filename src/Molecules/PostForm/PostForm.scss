@@ -1,0 +1,13 @@
+.post {
+  &-submission {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+
+    @media (min-width: 960px) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}

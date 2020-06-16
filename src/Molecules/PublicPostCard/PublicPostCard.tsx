@@ -21,7 +21,7 @@ const PublicPostCard = (props: {post: PublicPost}): ReactElement => {
           <p>{`${post.name.firstName} ${post.name.lastName}`}</p>
         </div>
         <div className="public-post-top__date">
-          <TimeContainer date={post.time} relative />
+          <TimeContainer time={post.time} relative />
           {post.isVenting && <p>{ventString}</p>}
         </div>
       </div>

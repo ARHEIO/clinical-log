@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import './TimeContainer.scss';
 
 // Will adjust posting data/time based on timezone
@@ -35,9 +35,21 @@ const testables = {
   getAbsoluteDate,
 };
 
-const TimeContainer = ({ date, relative }: {date: string; relative: boolean}): ReactElement => (
-  <p>{relative ? getRelativeDate(date) : getAbsoluteDate(date) }</p>
-);
+const TimeContainer = ({ time, relative }: {time: string; relative: boolean}): ReactElement => {
+  const [content, setContent] = useState<any>(null);
+
+  useEffect(() => {
+    const parsedDate = relative ? getRelativeDate(time) : getAbsoluteDate(time);
+    setContent(parsedDate);
+    if (relative) { // keep relative time fresh
+      setInterval(() => setContent(getRelativeDate(time)), 60000);
+    }
+  }, [setContent, time, relative]);
+
+  return (
+    <p>{content}</p>
+  );
+};
 
 export default TimeContainer;
 

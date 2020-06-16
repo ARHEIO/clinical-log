@@ -5,8 +5,9 @@ import { Button } from '@material-ui/core';
 import Spinner from '../../Atoms/Spinner/Spinner';
 import Card from '../../Atoms/Card/Card';
 import Toolbar from '../../Molecules/Toolbar/Toolbar';
+import PostForm from '../../Molecules/PostForm/PostForm';
 import MedicalLogCard from '../../Molecules/MedicalLogCard/MedicalLogCard';
-import { Post } from '../../Services/PostApi/models';
+import { Post, Name } from '../../Services/PostApi/models';
 import { getClinicalLog } from '../../Services/PostApi/api';
 
 // A reminder that we don't need to check auth state here
@@ -19,6 +20,20 @@ const ClinicView = (): ReactElement => {
     getClinicalLog()
       .then((posts: Post[]) => setClinicLogs(posts))
       .catch(() => setError('Failed to load posts'));
+  };
+
+  const publishNewPost = (postContent: any): void => {
+    const userDetails: Name = {
+      firstName: 'Chris', lastName: 'Redfield',
+    };
+    const newLog: Post = {
+      content: postContent.postContent,
+      name: userDetails,
+      time: new Date().toISOString(),
+    };
+
+    // eslint-disable-next-line no-unused-expressions
+    clinicLogs && setClinicLogs([newLog, ...clinicLogs]);
   };
 
   useEffect(() => {
@@ -35,7 +50,9 @@ const ClinicView = (): ReactElement => {
     : (
       <div className="clinic-container">
         <h2>Authed Toolbar</h2>
-        <Card><Toolbar location="clinic" /></Card>
+        <Toolbar location="clinic" />
+        <h2>Something to say?</h2>
+        <PostForm onSubmitParent={publishNewPost} />
         <h2>Clincal Logs</h2>
         { clinicLogs
           ? (

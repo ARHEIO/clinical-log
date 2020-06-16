@@ -8,9 +8,10 @@ import Spinner from '../../Atoms/Spinner/Spinner';
 import Card from '../../Atoms/Card/Card';
 import PublicPostCard from '../../Molecules/PublicPostCard/PublicPostCard';
 import Toolbar from '../../Molecules/Toolbar/Toolbar';
+import PostForm from '../../Molecules/PostForm/PostForm';
 import { AuthContext } from '../../Store/Store';
 import { getPublicPosts } from '../../Services/PostApi/api';
-import { PublicPost } from '../../Services/PostApi/models';
+import { PublicPost, Name, Reacts } from '../../Services/PostApi/models';
 
 const NewsfeedView = (): ReactElement => {
   const [publicPosts, setPublicPosts] = useState<PublicPost[] | null>(null);
@@ -23,9 +24,30 @@ const NewsfeedView = (): ReactElement => {
       .catch(() => setError('Failed to load posts'));
   };
 
+  const publishNewPost = (postContent: any): void => {
+    const userDetails: Name = {
+      firstName: 'Chris', lastName: 'Redfield',
+    };
+    const emptyReacts: Reacts = {
+      like: 0, haha: 0, wow: 0, sad: 0,
+    };
+    const newPost: PublicPost = {
+      content: postContent.postContent,
+      isVenting: postContent.isVenting,
+      name: userDetails,
+      time: new Date().toISOString(),
+      reacts: emptyReacts,
+    };
+
+    // eslint-disable-next-line no-unused-expressions
+    publicPosts && setPublicPosts([newPost, ...publicPosts]);
+  };
+
   useEffect(() => {
-    getPosts();
-  }, []);
+    if (!publicPosts) {
+      getPosts();
+    }
+  }, [publicPosts]);
 
   // TODO find a better way to handle errors than nested statements
   // TODO make global error panel
@@ -42,7 +64,9 @@ const NewsfeedView = (): ReactElement => {
         { authState.isAuthed && (
           <>
             <h2>Authed Toolbar</h2>
-            <Card><Toolbar location="newsfeed" /></Card>
+            <Toolbar location="newsfeed" />
+            <h2>Something to say?</h2>
+            <PostForm onSubmitParent={publishNewPost} isPublic />
           </>
         )}
         <h2>Newsfeed</h2>
