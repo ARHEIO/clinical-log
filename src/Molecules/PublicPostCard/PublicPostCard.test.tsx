@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { render } from '@testing-library/react';
 import pretty from 'pretty';
 import PublicPostCard from './PublicPostCard';
 import { PublicPost } from '../../Services/PostApi/models';
+
+jest.mock('../../Atoms/TimeContainer/TimeContainer', () => (): ReactElement => (<p>TimeContainer</p>));
 
 const defaultPost: PublicPost = {
   name: {

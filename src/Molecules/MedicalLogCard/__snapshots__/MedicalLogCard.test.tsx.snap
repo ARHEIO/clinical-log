@@ -10,7 +10,7 @@ exports[`renders learn react link 1`] = `
       <p>Chris Redfield</p>
     </div>
     <div class=\\"public-post-top__date\\">
-      <p>Jun 12, 11:30 AM</p>
+      <p>TimeContainer</p>
     </div>
   </div>
   <p class=\\"public-post__content\\">Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice</p>
