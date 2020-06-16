@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, SyntheticEvent } from 'react';
 import './ReactComponent.scss';
 import { IconButton } from '@material-ui/core';
 import {
@@ -6,40 +6,62 @@ import {
 } from '@material-ui/icons';
 import { Reacts } from '../../Services/PostApi/models';
 
-const ReactComponent = (props: {reacts: Reacts}): ReactElement => {
-  const { reacts } = props;
-  const reactHandler = (): void => {
-    // eslint-disable-next-line no-console
-    console.log('Clicked the handler button');
-  };
+const ReactComponent = (props: {reacts: Reacts; reactHandler: Function}): ReactElement => {
+  const { reacts, reactHandler } = props;
 
   return (
     <div className="reacts">
-      <span className="react-entity">
+      <IconButton
+        className="react-entity"
+        color="primary"
+        id="like"
+        onClick={(e: SyntheticEvent): void => {
+          e.preventDefault();
+          reactHandler('like');
+        }}
+      >
         <ThumbUp color="secondary" />
-        <p>
-          {reacts.like}
-        </p>
-      </span>
-      <span className="react-entity">
+        <p>{reacts.like}</p>
+      </IconButton>
+
+      <IconButton
+        className="react-entity"
+        color="primary"
+        id="haha"
+        onClick={(e: SyntheticEvent): void => {
+          e.preventDefault();
+          reactHandler('haha');
+        }}
+      >
         <TagFaces color="secondary" />
-        <p>
-          {reacts.haha}
-        </p>
-      </span>
-      <span className="react-entity">
+        <p>{reacts.haha}</p>
+      </IconButton>
+
+      <IconButton
+        className="react-entity"
+        color="primary"
+        id="wow"
+        onClick={(e: SyntheticEvent): void => {
+          e.preventDefault();
+          reactHandler('wow');
+        }}
+      >
         <Hotel color="secondary" />
-        <p>
-          {reacts.wow}
-        </p>
-      </span>
-      <span className="react-entity">
+        <p>{reacts.wow}</p>
+      </IconButton>
+
+      <IconButton
+        className="react-entity"
+        color="primary"
+        id="sad"
+        onClick={(e: SyntheticEvent): void => {
+          e.preventDefault();
+          reactHandler('sad');
+        }}
+      >
         <SentimentVeryDissatisfied color="secondary" />
-        <p>
-          {reacts.sad}
-        </p>
-      </span>
-      <IconButton color="primary" onClick={reactHandler}><ThumbUp /></IconButton>
+        <p>{reacts.sad}</p>
+      </IconButton>
     </div>
   );
 };

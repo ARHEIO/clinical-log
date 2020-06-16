@@ -1,4 +1,5 @@
 export interface Post {
+  id: number;
   name: Name; // name of user posting
   time: string; // date of posting
   content: string;

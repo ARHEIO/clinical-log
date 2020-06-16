@@ -6,6 +6,19 @@ exports[`Clinic view should render 1`] = `
   <div class=\\"card-container\\">
     <nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span></a></nav>
   </div>
+  <h2>Something to say?</h2>
+  <div class=\\"card-container\\">
+    <form>
+      <div class=\\"MuiFormControl-root MuiTextField-root post__input MuiFormControl-fullWidth\\">
+        <div class=\\"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl\\"><input aria-invalid=\\"false\\" id=\\"postContent\\" placeholder=\\"Enter your post\\" type=\\"text\\" class=\\"MuiInputBase-input MuiOutlinedInput-input\\" value=\\"\\">
+          <fieldset aria-hidden=\\"true\\" style=\\"padding-left: 8px;\\" class=\\"PrivateNotchedOutline-root-71 MuiOutlinedInput-notchedOutline\\">
+            <legend class=\\"PrivateNotchedOutline-legend-72\\" style=\\"width: 0.01px;\\"><span>​</span></legend>
+          </fieldset>
+        </div>
+      </div>
+      <div class=\\"post-submission\\"><button class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained post-submission__submit MuiButton-containedPrimary\\" tabindex=\\"0\\" type=\\"submit\\"><span class=\\"MuiButton-label\\">Submit</span><span class=\\"MuiTouchRipple-root\\"></span></button></div>
+    </form>
+  </div>
   <h2>Clincal Logs</h2>
   <div class=\\"post-container\\">
     <p>MedicalLogCard</p>
