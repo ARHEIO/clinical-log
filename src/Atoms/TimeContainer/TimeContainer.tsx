@@ -35,7 +35,7 @@ const testables = {
   getAbsoluteDate,
 };
 
-const TimeContainer = ({ time, relative }: {time: string; relative: boolean}): ReactElement => {
+const TimeContainer = ({ time, relative }: {time: string; relative?: boolean}): ReactElement => {
   const [content, setContent] = useState<any>(null);
 
   useEffect(() => {

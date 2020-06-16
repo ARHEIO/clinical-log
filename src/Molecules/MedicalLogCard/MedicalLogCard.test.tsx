@@ -9,7 +9,7 @@ const defaultPost: Post = {
     firstName: 'Chris',
     lastName: 'Redfield',
   },
-  time: new Date().toISOString(),
+  time: '2020-06-12T01:30:35.096Z',
   content: 'Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice',
 };
 

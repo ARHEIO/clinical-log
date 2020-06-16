@@ -8,9 +8,21 @@ import Card from '../../Atoms/Card/Card';
 
 const PostForm = (props: {onSubmitParent: Function; isPublic?: boolean}): ReactElement => {
   const { onSubmitParent, isPublic } = props;
+
+  const validate = (values: {postContent: string}): any => {
+    const errors: { postContent?: string } = {};
+    if (!values.postContent) {
+      errors.postContent = 'Post content is required';
+    } else if (!isPublic && values.postContent.includes('@')) {
+      errors.postContent = 'Mentioned are not allowed in clinical logs';
+    }
+    return errors;
+  };
+
   return (
     <Card>
       <Formik
+        validate={validate}
         initialValues={{ postContent: '' }}
         onSubmit={async (values): Promise<void> => {
           await new Promise((resolve) => setTimeout(resolve, 500));

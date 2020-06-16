@@ -15,7 +15,7 @@ const MedicalLogCard = ({ post }: {post: Post}): ReactElement => (
         <p>{`${post.name.firstName} ${post.name.lastName}`}</p>
       </div>
       <div className="public-post-top__date">
-        <TimeContainer time={post.time} relative={false} />
+        <TimeContainer time={post.time} />
       </div>
     </div>
     <p className="public-post__content">{post.content}</p>

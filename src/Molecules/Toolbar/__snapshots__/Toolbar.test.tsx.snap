@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toolbar should render when bad prop passed 1`] = `"<nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span><span class=\\"MuiTouchRipple-root\\"></span></a></nav>"`;
+exports[`Toolbar should render when bad prop passed 1`] = `
+"<div class=\\"card-container\\">
+  <nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span><span class=\\"MuiTouchRipple-root\\"></span></a></nav>
+</div>"
+`;
 
-exports[`Toolbar should render when clinic prop passed 1`] = `"<nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span></a></nav>"`;
+exports[`Toolbar should render when clinic prop passed 1`] = `
+"<div class=\\"card-container\\">
+  <nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span><span class=\\"MuiTouchRipple-root\\"></span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span></a></nav>
+</div>"
+`;
 
-exports[`Toolbar should render when newsfeed prop passed 1`] = `"<nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span><span class=\\"MuiTouchRipple-root\\"></span></a></nav>"`;
+exports[`Toolbar should render when newsfeed prop passed 1`] = `
+"<div class=\\"card-container\\">
+  <nav class=\\"navigation-toolbar\\"><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" aria-disabled=\\"true\\" href=\\"#/newsfeed\\"><span class=\\"MuiButton-label\\">Newsfeed</span></a><a class=\\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary\\" tabindex=\\"0\\" aria-disabled=\\"false\\" href=\\"#/clinic\\"><span class=\\"MuiButton-label\\">Clinical Log</span><span class=\\"MuiTouchRipple-root\\"></span></a></nav>
+</div>"
+`;
