@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders learn react link 1`] = `
-"<div class=\\"card-container public-post\\">
-  <div class=\\"public-post-top\\">
-    <div class=\\"public-post-top__name\\">
+"<div class=\\"card-container medical-log\\">
+  <div class=\\"medical-log-top\\">
+    <div class=\\"medical-log-top__name\\">
       <div class=\\"icon-container\\">
         <p>CR</p>
       </div>
       <p>Chris Redfield</p>
     </div>
-    <div class=\\"public-post-top__date\\">
+    <div class=\\"medical-log-top__date\\">
       <p>TimeContainer</p>
     </div>
   </div>
-  <p class=\\"public-post__content\\">Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice</p>
+  <p class=\\"medical-log__content\\">Scientists have discovered a population of neurons that control hibernation-like behavior, or torpor, in mice</p>
 </div>"
 `;
